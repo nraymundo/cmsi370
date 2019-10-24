@@ -3,10 +3,20 @@ import React from "react";
 import "./TeamInfo.css";
 
 const TeamInfo = props => {
-  const { image } = props;
+  const { data } = props;
+  // console.log(data);
   return (
     <div className="TeamInfo">
-      <img src={image.images.fixed_width.url} alt={image.source_tld} />
+      <div className="Circle">
+        <img src={data.logo} alt="blah" id="TeamLogo" />
+      </div>
+      <div className="TeamData">
+        <p id="TeamName">{data.name}</p>
+        <p>
+          {data.venue_city}, {data.country}
+        </p>
+        <p>{data.venue_name}</p>
+      </div>
     </div>
   );
 };
