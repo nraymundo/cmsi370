@@ -1,6 +1,6 @@
 .Carousel {
   text-align: center;
-  color: white;
+  color: #f1f7ed;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
 }
 
 #line {
-  background-color: white;
+  background-color: #f1f7ed;
   color: black;
   width: 1280px;
   height: 2px;

@@ -22,7 +22,7 @@
 }
 
 .SearchForm p {
-  color: white;
+  color: #f1f7ed;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -38,11 +38,11 @@
 
 .SearchBar input {
   border: none;
-  background-color: #5aaa95;
+  background-color: #f1f7ed;
   width: 600px;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
-  color: white;
+  color: black;
   font-size: 20px;
   height: 30px;
   /* background-color: rgba(70, 70, 70, 0.379); */
@@ -50,13 +50,14 @@
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: black;
   opacity: 1; /* Firefox */
 }
 
 .SearchBar button {
-  background-color: white;
-  border: none;
+  background-color: #4f6d7a;
+  border: 2px;
+  border-color: black;
   color: #23272a;
   font-family: "Oswald", sans-serif;
   font-weight: 400;

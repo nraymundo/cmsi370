@@ -1,5 +1,6 @@
 .AppHeader h1 {
-  color: white;
+  color: #f1f7ed;
+  /* text-shadow: #dcc48e 1px 1px; */
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 50px;
