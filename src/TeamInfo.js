@@ -297,14 +297,25 @@ const TeamInfo = props => {
           <TabPanel className="TeamFixtures">{PrintFixtures}</TabPanel>
           <TabPanel></TabPanel>
           <TabPanel className="TeamStats">
-            {/* {stats[0] && console.log(stats[0])} */}
+            {stats[0] && console.log(stats[0].api.statistics)}
             {/* {console.log(stats[0] && stats[0].api.statistics)} */}
             <div className="MainStats">
-              {stats[0] &&
+              {stats[0] && (
+                <div>{stats[0].api.statistics.matchs.matchsPlayed.total}</div>
+              )}
+              {stats[0] && (
+                <div>{stats[0].api.statistics.matchs.matchsPlayed.wins}</div>
+              )}
+              {stats[0] && (
+                <div>{stats[0].api.statistics.matchs.matchsPlayed.losses}</div>
+              )}
+              {/* <div>teams.api.statistics.goalsAvg.goalsFor.total</div> */}
+              {/* {stats[0] &&
                 stats.map(teams => (
-                  <div></div>
-                  <span>{teams.api.statistics.goalsAvg.goalsFor.total}</span>
-                ))}
+                  <div>
+                    {teams.api.statistics.goalsAvg.goalsFor.total}
+                  </div>
+                ))} */}
             </div>
             {/* {table[0] &&
               table[0].api.standings[0].map(teams => (
