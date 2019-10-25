@@ -1,7 +1,8 @@
 .Teams {
-  width: 650px;
+  width: 850px;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 .TeamInfo {
@@ -13,7 +14,7 @@
 }
 
 .Circle {
-  background-color: #f1f7ed;
+  background-color: white;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -33,7 +34,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 15px;
-  color: #f1f7ed;
+  color: white;
 }
 
 #TeamName {
@@ -44,4 +45,91 @@
 #TeamLogo {
   height: 100px;
   width: 100px;
+}
+
+#name {
+  color: black;
+}
+
+#city {
+  color: black;
+}
+
+#country {
+  color: black;
+}
+
+.LeagueFixtures {
+  display: flex;
+  flex-direction: column;
+}
+
+.TableInfo {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  background-color: white;
+  /* margin-bottom: 10px; */
+}
+
+.PositionTeam {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  /* margin-left: 20px; */
+  justify-content: space-around;
+}
+
+.TableStats {
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+  margin-right: 20px;
+  justify-content: space-around;
+}
+
+.TableContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.TableContent span {
+  margin-bottom: 10px;
+}
+
+.LeagueTable {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .Positions {
+  display: flex;
+  flex-direction: column;
+} */
+
+.Positions > tr > th {
+  padding: 10px 0px 10px 0px;
+}
+
+.Positions > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Clubs {
+  margin-left: 10px;
+}
+
+.Clubs > tr > th {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0px 10px 0px;
+}
+
+.Clubs > tr > td {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
 }

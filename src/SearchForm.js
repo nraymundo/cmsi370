@@ -10,6 +10,7 @@ const SearchForm = () => {
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
   const [images, setImages] = useState([]);
+  // const [fixtures, setFixtures] = useState([]);
 
   const handleQueryChange = event => setQuery(event.target.value);
 
@@ -20,11 +21,17 @@ const SearchForm = () => {
 
     try {
       const result = await searchTeams({
-        rating: "pg-13",
-        q: query
+        // rating: "pg-13",
+        // q: query
       });
 
+      // const fixtures = await teamFixtures({
+      //   // rating: "pg-13",
+      //   // q: query
+      // });
+
       setImages(result.data);
+      // setFixtures(fixtures.data);
     } catch (error) {
       setError("Sorry, but something went wrong.");
     }
@@ -47,19 +54,6 @@ const SearchForm = () => {
           Search
         </button>
       </div>
-
-      {/* <input
-        name="query"
-        type="text"
-        value={query}
-        onChange={handleQueryChange}
-      /> */}
-
-      {/* <div className="ButtonBar">
-        <button type="submit" disabled={!query}>
-          Search
-        </button>
-      </div> */}
 
       {error && <div className="error">{error}</div>}
 

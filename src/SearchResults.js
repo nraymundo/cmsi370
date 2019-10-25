@@ -5,19 +5,18 @@ import "./SearchResults.css";
 // import searchTeams from "./api.js";
 
 import TeamInfo from "./TeamInfo";
+// import TeamStats from "./TeamStats";
 
 const SearchResults = props => {
-  // console.log(props);
   return (
     <div className="SearchResults">
-      {props.results.map(data => {
-        // console.log(data);
-        // const image = {
-        //   id: 5
-        // };
-        // return <TeamInfo key={image.id} image={image} />;
-        return <TeamInfo key={data.team_id} data={data} />;
-      })}
+      {props.results.map(data => (
+        <TeamInfo key={data.team_id} data={data} />
+      ))}
+
+      {/* {props.content.map(data => (
+        <TeamStats key={data.matchs} data={data} />
+      ))} */}
     </div>
   );
 };

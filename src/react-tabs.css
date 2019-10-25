@@ -4,7 +4,7 @@
 }
 
 .react-tabs__tab-list {
-  border-bottom: 1px solid #aaa;
+  /* border-bottom: 1px solid #aaa; */
   margin: 0 0 10px;
   padding: 0;
   display: flex;
@@ -32,17 +32,12 @@
 }
 
 .react-tabs__tab--selected {
-  background: #f1f7ed;
+  background: white;
   /* border-color: #aaa; */
   color: black;
   height: 30px;
   width: 216.67px;
   /* border-radius: 4px 4px 0 0; */
-}
-
-.react-tabs__tab--disabled {
-  color: GrayText;
-  cursor: default;
 }
 
 .react-tabs__tab:focus {
@@ -63,13 +58,17 @@
 
 .react-tabs__tab-panel {
   display: none;
-  background-color: #4f6d7a;
-  margin-top: -21px;
+  background-color: white;
+  margin-top: -10px;
   margin-right: 2px;
   margin-left: 2px;
+  height: 400px;
 }
 
 .react-tabs__tab-panel--selected {
   display: block;
-  /* background-color: blue; */
+  background-color: white;
+  margin-top: -10px;
+  margin-right: 2px;
+  margin-left: 2px;
 }
