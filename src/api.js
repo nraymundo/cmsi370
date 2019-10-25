@@ -1981,4 +1981,63 @@ Promise.resolve({
     ]
 });
 
-export { apiHost, searchTeams, TeamFixtures, LeagueTable };
+const TeamStats = () =>
+  Promise.resolve({
+    data: [
+        {
+            "api": {
+                "results": 1,
+                "statistics": {
+                    "matchs": {
+                        "matchsPlayed": {
+                            "home": 5,
+                            "away": 4,
+                            "total": 9
+                        },
+                        "wins": {
+                            "home": 3,
+                            "away": 0,
+                            "total": 3
+                        },
+                        "draws": {
+                            "home": 1,
+                            "away": 2,
+                            "total": 3
+                        },
+                        "loses": {
+                            "home": 1,
+                            "away": 2,
+                            "total": 3
+                        }
+                    },
+                    "goals": {
+                        "goalsFor": {
+                            "home": 10,
+                            "away": 5,
+                            "total": 15
+                        },
+                        "goalsAgainst": {
+                            "home": 4,
+                            "away": 9,
+                            "total": 13
+                        }
+                    },
+                    "goalsAvg": {
+                        "goalsFor": {
+                            "home": "2.0",
+                            "away": "1.3",
+                            "total": "1.7"
+                        },
+                        "goalsAgainst": {
+                            "home": "0.8",
+                            "away": "2.3",
+                            "total": "1.4"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+  });
+
+export { apiHost, searchTeams, TeamFixtures, LeagueTable, TeamStats };

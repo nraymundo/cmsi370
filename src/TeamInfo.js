@@ -5,7 +5,7 @@ import "./react-tabs.css";
 
 import "./TeamInfo.css";
 
-import { TeamFixtures, LeagueTable } from "./api.js";
+import { TeamFixtures, LeagueTable, TeamStats } from "./api.js";
 // import { apiHost } from "./api";
 
 // import TeamStats from "./TeamStats";
@@ -21,7 +21,8 @@ import { TeamFixtures, LeagueTable } from "./api.js";
 const TeamInfo = props => {
   const { data } = props;
   const [fixtures, setFixtures] = useState({});
-  const [Table, setTable] = useState({});
+  const [table, setTable] = useState({});
+  const [stats, setStats] = useState({});
 
   // const mappingFunction = p => p.team_name;
   // if (fixtures[0] != undefined) {
@@ -49,9 +50,19 @@ const TeamInfo = props => {
     }
   };
 
+  const fetchStats = async event => {
+    try {
+      const result = await TeamStats({});
+      setStats(result.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     fetchTable();
     fetchFixtures();
+    fetchStats();
   }, []);
 
   // Object.keys(myObject).map(function(key, index) {
@@ -140,58 +151,168 @@ const TeamInfo = props => {
 
           <TabPanel className="LeagueTable">
             <div className="TableInfo">
-              <table className="Positions">
-                <tr>
-                  <th>Position</th>
-                </tr>
-                {Table[0] &&
-                  Table[0].api.standings[0].map(teams => (
+              <div className="PositionTeam">
+                <table className="Positions">
+                  <thead>
                     <tr>
-                      <td>{teams.rank}</td>
+                      <th>Position</th>
                     </tr>
-                  ))}
-              </table>
-              <table className="Clubs">
-                <tr>
-                  <th>Club</th>
-                </tr>
-                {Table[0] &&
-                  Table[0].api.standings[0].map(teams => (
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.rank}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="Clubs">
+                  <thead>
                     <tr>
-                      <td>{teams.teamName}</td>
+                      <th>Club</th>
                     </tr>
-                  ))}
-              </table>
-              {/* <table id="Position">
-                <tr>
-                  <td>Position</td>
-                </tr>
-              </table> */}
-              {/* <table>
-                
-              </table>
-              <table>
-                
-              </table> */}
-              {/* <div className="PositionTeam">
-                <span>Position</span>
-                <span>Club</span>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.teamName}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
               </div>
-              <div className="TableStats">
-                <span>Won</span>
-                <span>Draw</span>
-                <span>Lost</span>
-                <span>GF</span>
-                <span>GA</span>
-                <span>GD</span>
-                <span>Points</span>
-              </div> */}
+
+              <div className="TeamStats">
+                <table className="Won">
+                  <thead>
+                    <tr>
+                      <th>Won</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.all.win}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="Drawn">
+                  <thead>
+                    <tr>
+                      <th>Drawn</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.all.draw}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="Lost">
+                  <thead>
+                    <tr>
+                      <th>Lost</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.all.lose}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="GoalsFor">
+                  <thead>
+                    <tr>
+                      <th>GF</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.all.goalsFor}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="GoalsAgainst">
+                  <thead>
+                    <tr>
+                      <th>GA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.all.goalsAgainst}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="GoalDiff">
+                  <thead>
+                    <tr>
+                      <th>GD</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.goalsDiff}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="Points">
+                  <thead>
+                    <tr>
+                      <th>Points</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {table[0] &&
+                      table[0].api.standings[0].map(teams => (
+                        <tr>
+                          <td>{teams.points}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
             {/* {PrintTable} */}
           </TabPanel>
-          <TabPanel className="LeagueFixtures">{PrintFixtures}</TabPanel>
+          <TabPanel className="TeamFixtures">{PrintFixtures}</TabPanel>
           <TabPanel></TabPanel>
-          <TabPanel></TabPanel>
+          <TabPanel className="TeamStats">
+            {/* {stats[0] && console.log(stats[0])} */}
+            {/* {console.log(stats[0] && stats[0].api.statistics)} */}
+            <div className="MainStats">
+              {stats[0] &&
+                stats.map(teams => (
+                  <div></div>
+                  <span>{teams.api.statistics.goalsAvg.goalsFor.total}</span>
+                ))}
+            </div>
+            {/* {table[0] &&
+              table[0].api.standings[0].map(teams => (
+                <tr>
+                  <td>{teams.rank}</td>
+                </tr>
+              ))} */}
+          </TabPanel>
         </Tabs>
       </div>
     </div>

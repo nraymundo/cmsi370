@@ -59,7 +59,7 @@
   color: black;
 }
 
-.LeagueFixtures {
+.TeamFixtures {
   display: flex;
   flex-direction: column;
 }
@@ -67,7 +67,8 @@
 .TableInfo {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+  flex-wrap: nowrap;
+  justify-content: space-between;
   background-color: white;
   /* margin-bottom: 10px; */
 }
@@ -75,61 +76,180 @@
 .PositionTeam {
   display: flex;
   flex-direction: row;
-  width: 200px;
+  /* width: 200px; */
   /* margin-left: 20px; */
   justify-content: space-around;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
 }
 
-.TableStats {
+.Positions {
+  margin-left: 20px;
+}
+
+.Positions > thead > tr > th {
   display: flex;
-  flex-direction: row;
-  width: 450px;
-  margin-right: 20px;
-  justify-content: space-around;
-}
-
-.TableContent {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.TableContent span {
+  align-content: flex-start;
   margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
 }
 
-.LeagueTable {
-  display: flex;
-  flex-direction: column;
-}
-
-/* .Positions {
-  display: flex;
-  flex-direction: column;
-} */
-
-.Positions > tr > th {
-  padding: 10px 0px 10px 0px;
-}
-
-.Positions > tr > td {
+.Positions > tbody > tr > td {
   display: flex;
   justify-content: center;
   padding-bottom: 10px;
 }
 
 .Clubs {
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
-.Clubs > tr > th {
+.Clubs > thead > tr > th {
   display: flex;
   justify-content: flex-start;
-  padding: 10px 0px 10px 0px;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
 }
 
-.Clubs > tr > td {
+.Clubs > tbody > tr > td {
   display: flex;
   justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.TeamStats {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-right: 20px;
+  /* margin-bottom: 10px; */
+}
+
+.Won {
+  margin-left: 120px;
+}
+
+.Won > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Won > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Drawn {
+  margin-left: 20px;
+}
+
+.Drawn > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Drawn > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Lost {
+  margin-left: 20px;
+}
+
+.Lost > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Lost > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.GoalsFor {
+  margin-left: 20px;
+}
+
+.GoalsFor > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.GoalsFor > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.GoalsAgainst {
+  margin-left: 20px;
+}
+
+.GoalsAgainst > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.GoalsAgainst > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.GoalDiff {
+  margin-left: 20px;
+}
+
+.GoalDiff > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.GoalDiff > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Points {
+  margin-left: 20px;
+}
+
+.Points > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin: 0px 0px 10px 0px;
+}
+
+.Points > tbody > tr > td {
+  display: flex;
+  justify-content: center;
   padding-bottom: 10px;
 }
