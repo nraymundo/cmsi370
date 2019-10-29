@@ -65,66 +65,6 @@ const TeamInfo = props => {
     fetchStats();
   }, []);
 
-  // Object.keys(myObject).map(function(key, index) {
-  //   myObject[key] *= 2;
-  // });
-
-  // console.log(fixtures[0] && fixtures[0].fixtures);
-  // console.log(Table[0] && Table[0].api.standings[0]);
-
-  // const PrintTable = Table[0]
-  //   ? Table[0].api.standings[0].map(teams => (
-  //       <div className="TableContent">
-  //         <span>{teams.rank + " "}</span>
-  //         <span>{teams.teamName + " "}</span>
-  //         {/* <span>{teams.rank + " " + teams.teamName + " "}</span> */}
-  //         <span>{teams.all.matchsPlayed + " "}</span>
-  //         <span>{teams.all.win + " "}</span>
-  //         <span>{teams.all.draw + " "}</span>
-  //         <span>{teams.all.lose + " "}</span>
-  //         <span>{teams.all.goalsFor + " "}</span>
-  //         <span>{teams.all.goalsAgainst + " "}</span>
-  //         <span>{teams.goalsDiff + " "}</span>
-  //         <span>{teams.points + " "}</span>
-  //         {/* <span>
-  //           {teams.all.matchsPlayed +
-  //             " " +
-  //             teams.all.win +
-  //             " " +
-  //             teams.all.draw +
-  //             " " +
-  //             teams.all.lose +
-  //             " " +
-  //             teams.all.goalsFor +
-  //             " " +
-  //             teams.all.goalsAgainst +
-  //             " " +
-  //             teams.goalsDiff +
-  //             " " +
-  //             teams.points}
-  //         </span> */}
-  //       </div>
-  //     ))
-  //   : "";
-
-  // const PrintTable = Table[0]
-  //   ? Table[0].api.standings[0].map(teams => (
-  //     ))
-  //   : "";
-
-  const PrintFixtures = fixtures[0]
-    ? fixtures[0].fixtures.map(teams => (
-        <span>{teams.homeTeam.team_name + " " + teams.awayTeam.team_name}</span>
-      ))
-    : "";
-
-  // const whatever = fixtures[0]
-  //   ? Object.keys(fixtures[0].fixtures[0].homeTeam).map(team_name => (
-  //       <span>hello, {fixtures[0].fixtures[0].homeTeam.team_name}</span>
-  //     ))
-  //   : "";
-
-  // console.log(data);
   return (
     <div className="Teams">
       <div className="TeamInfo">
@@ -145,7 +85,7 @@ const TeamInfo = props => {
           <TabList>
             <Tab>Table</Tab>
             <Tab>Fixtures</Tab>
-            <Tab>Results</Tab>
+            <Tab disabled>Results</Tab>
             <Tab>Stats</Tab>
           </TabList>
 
@@ -183,8 +123,7 @@ const TeamInfo = props => {
                   </tbody>
                 </table>
               </div>
-
-              <div className="TeamStats">
+              <div className="TeamTableStats">
                 <table className="Won">
                   <thead>
                     <tr>
@@ -294,29 +233,72 @@ const TeamInfo = props => {
             </div>
             {/* {PrintTable} */}
           </TabPanel>
-          <TabPanel className="TeamFixtures">{PrintFixtures}</TabPanel>
+          <TabPanel className="TeamFixtures">
+            {/* {fixtures[0] &&
+              fixtures[0].fixtures[0].goalsHomeTeam !== null &&
+              console.log("hello")} */}
+
+            {fixtures[0] &&
+              fixtures[0].fixtures[0].goalsHomeTeam !== null &&
+              fixtures[0].fixtures.map(teams => (
+                <span>
+                  {/* {teams.goalsHomeTeam} */}
+                  {teams.homeTeam.team_name + " " + teams.awayTeam.team_name}
+                </span>
+              ))}
+          </TabPanel>
           <TabPanel></TabPanel>
           <TabPanel className="TeamStats">
-            {stats[0] && console.log(stats[0].api.statistics)}
-            {/* {console.log(stats[0] && stats[0].api.statistics)} */}
-            <div className="MainStats">
-              {stats[0] && (
-                <div>{stats[0].api.statistics.matchs.matchsPlayed.total}</div>
-              )}
-              {stats[0] && (
-                <div>{stats[0].api.statistics.matchs.matchsPlayed.wins}</div>
-              )}
-              {stats[0] && (
+            {stats[0] && (
+              <div className="MainStats">
+                <div id="TotalMatches">
+                  <span>Matches played</span>
+                  <span id="TotalPlayed">
+                    {stats[0].api.statistics.matchs.matchsPlayed.total}
+                  </span>
+                </div>
+                <div id="TotalWins">
+                  <span>Wins</span>
+                  <span id="Wins">
+                    {stats[0].api.statistics.matchs.wins.total}
+                  </span>
+                </div>
+                <div id="TotalLosses">
+                  <span>Losses</span>
+                  <span id="Losses">
+                    {stats[0].api.statistics.matchs.loses.total}
+                  </span>
+                </div>
+                <div id="TotalGoals">
+                  <span>Goals</span>
+                  <span id="Goals">
+                    {stats[0].api.statistics.goals.goalsFor.total}
+                  </span>
+                </div>
+                <div id="TotalGoalsConceded">
+                  <span>Goals conceded</span>
+                  <span id="GoalsConceded">
+                    {stats[0].api.statistics.goals.goalsAgainst.total}
+                  </span>
+                </div>
+              </div>
+            )}
+            {/* {stats[0] && (
+                <div id="TotalWins">
+                  {stats[0].api.statistics.matchs.matchsPlayed.wins}
+                </div>
+              )} */}
+            {/* {stats[0] && (
                 <div>{stats[0].api.statistics.matchs.matchsPlayed.losses}</div>
-              )}
-              {/* <div>teams.api.statistics.goalsAvg.goalsFor.total</div> */}
-              {/* {stats[0] &&
+              )} */}
+            {/* <div>teams.api.statistics.goalsAvg.goalsFor.total</div> */}
+            {/* {stats[0] &&
                 stats.map(teams => (
                   <div>
                     {teams.api.statistics.goalsAvg.goalsFor.total}
                   </div>
                 ))} */}
-            </div>
+            {/* </div> */}
             {/* {table[0] &&
               table[0].api.standings[0].map(teams => (
                 <tr>
