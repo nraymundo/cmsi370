@@ -18,6 +18,8 @@ import { TeamFixtures, LeagueTable, TeamStats } from "./api.js";
 //   }
 // }
 
+// JSON.parse(JSON.stringify(yourjson).replace(/null/g, '""'));
+
 const TeamInfo = props => {
   const { data } = props;
   const [fixtures, setFixtures] = useState({});
@@ -260,8 +262,11 @@ const TeamInfo = props => {
                       fixtures[0].fixtures.map(teams => (
                         <tr>
                           <td>
-                            <span>{teams.goalsHomeTeam}</span>
-                            <span>{teams.goalsAwayTeam}</span>
+                            <span>
+                              {teams.goalsHomeTeam +
+                                " - " +
+                                teams.goalsAwayTeam}
+                            </span>
                           </td>
                         </tr>
                       ))}
