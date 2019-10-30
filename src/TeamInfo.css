@@ -272,6 +272,64 @@
   font-family: "Oswald", sans-serif;
 }
 
+.FixturesTab {
+  display: flex;
+  justify-content: center;
+}
+
+.GameInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 10px 0px 10px 0px;
+}
+
+.HomeTeam > tbody > tr > td {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  font-family: "Oswald", sans-serif;
+  width: 160px;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+#HomeTeamIcon {
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.Score > tbody > tr > td {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 50px;
+  height: 25px;
+  font-family: "Oswald", sans-serif;
+  /* border-width: 2px 2px 2px 2px;
+  border-style: solid; */
+  margin-bottom: 20px;
+}
+
+.AwayTeam > tbody > tr > td {
+  /* display: flex;
+  justify-content: flex-start; */
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  font-family: "Oswald", sans-serif;
+  width: 170px;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+#AwayTeamIcon {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+}
+
 .TeamStats {
   display: flex;
   flex-direction: row;

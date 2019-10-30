@@ -85,7 +85,6 @@ const TeamInfo = props => {
           <TabList>
             <Tab>Table</Tab>
             <Tab>Fixtures</Tab>
-            <Tab disabled>Results</Tab>
             <Tab>Stats</Tab>
           </TabList>
 
@@ -234,20 +233,61 @@ const TeamInfo = props => {
             {/* {PrintTable} */}
           </TabPanel>
           <TabPanel className="TeamFixtures">
-            {/* {fixtures[0] &&
-              fixtures[0].fixtures[0].goalsHomeTeam !== null &&
-              console.log("hello")} */}
-
-            {fixtures[0] &&
-              fixtures[0].fixtures[0].goalsHomeTeam !== null &&
-              fixtures[0].fixtures.map(teams => (
-                <span>
-                  {/* {teams.goalsHomeTeam} */}
-                  {teams.homeTeam.team_name + " " + teams.awayTeam.team_name}
-                </span>
-              ))}
+            <div className="FixturesTab">
+              <div className="GameInfo">
+                <table className="HomeTeam">
+                  <tbody>
+                    {fixtures[0] &&
+                      fixtures[0].fixtures[0].goalsHomeTeam &&
+                      fixtures[0].fixtures.map(teams => (
+                        <tr>
+                          <td>
+                            <span>{teams.homeTeam.team_name}</span>
+                            <img
+                              src={teams.homeTeam.logo}
+                              alt="logo"
+                              id="HomeTeamIcon"
+                            ></img>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="Score">
+                  <tbody>
+                    {fixtures[0] &&
+                      fixtures[0].fixtures[0].goalsHomeTeam &&
+                      fixtures[0].fixtures.map(teams => (
+                        <tr>
+                          <td>
+                            <span>{teams.goalsHomeTeam}</span>
+                            <span>{teams.goalsAwayTeam}</span>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="AwayTeam">
+                  <tbody>
+                    {fixtures[0] &&
+                      fixtures[0].fixtures[0].goalsHomeTeam &&
+                      fixtures[0].fixtures.map(teams => (
+                        <tr>
+                          <td>
+                            <img
+                              src={teams.awayTeam.logo}
+                              alt="logo"
+                              id="AwayTeamIcon"
+                            ></img>
+                            <span>{teams.awayTeam.team_name}</span>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </TabPanel>
-          <TabPanel></TabPanel>
           <TabPanel className="TeamStats">
             {stats[0] && (
               <div className="MainStats">
