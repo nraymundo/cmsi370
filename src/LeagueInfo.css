@@ -1,0 +1,494 @@
+.LeagueHeader {
+  /* margin-top: -30px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.LeagueName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  border: 5px;
+  border-style: solid none;
+  /* border: 2px 0px 2px 0px;
+  border-style: solid; */
+  margin-bottom: -20px;
+}
+
+.LeagueName p {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+}
+
+.LeagueInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.LeagueInfo p {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+.League {
+  width: 850px;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 10px; */
+}
+
+/* .TeamInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+} */
+
+/* .Circle {
+  background-color: #fdfffc;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TeamData {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  align-items: flex-start;
+}
+
+.TeamData p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 15px;
+  color: black;
+}
+
+#TeamName {
+  font-size: 30px;
+  color: black;
+}
+
+#TeamLogo {
+  height: 30px;
+  width: 30px;
+}
+
+#name {
+  color: black;
+}
+
+#city {
+  color: black;
+}
+
+#country {
+  color: black;
+} */
+
+.TeamFixtures {
+  display: flex;
+  flex-direction: column;
+}
+
+.TableInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #fdfffc;
+  /* margin-bottom: 10px; */
+}
+
+.PositionTeam {
+  display: flex;
+  flex-direction: row;
+  /* width: 200px; */
+  /* margin-left: 20px; */
+  justify-content: space-around;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+}
+
+.Positions {
+  margin-left: 20px;
+}
+
+.Positions > thead > tr > th {
+  display: flex;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Positions > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.Clubs {
+  margin-left: 40px;
+}
+
+.Clubs > thead > tr > th {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Clubs > tbody > tr > td {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.TeamTableStats {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-right: 20px;
+  /* margin-bottom: 10px; */
+}
+
+.Won {
+  margin-left: 120px;
+}
+
+.Won > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Won > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.Drawn {
+  margin-left: 20px;
+}
+
+.Drawn > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Drawn > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.Lost {
+  margin-left: 20px;
+}
+
+.Lost > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.Lost > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.GoalsFor {
+  margin-left: 20px;
+}
+
+.GoalsFor > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.GoalsFor > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.GoalsAgainst {
+  margin-left: 20px;
+}
+
+.GoalsAgainst > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.GoalsAgainst > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.GoalDiff {
+  margin-left: 20px;
+}
+
+.GoalDiff > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+  /* padding: 10px 0px 10px 0px; */
+}
+
+.GoalDiff > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.Points {
+  margin-left: 20px;
+}
+
+.Points > thead > tr > th {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin: 0px 0px 10px 0px;
+  font-family: "Oswald", sans-serif;
+}
+
+.Points > tbody > tr > td {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.FixturesTab {
+  display: flex;
+  justify-content: center;
+}
+
+.GameInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 10px 0px 10px 0px;
+}
+
+.HomeTeam > tbody > tr > td {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  font-family: "Oswald", sans-serif;
+  width: 160px;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+#HomeTeamIcon {
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.Score > tbody > tr > td {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 50px;
+  height: 25px;
+  font-family: "Oswald", sans-serif;
+  /* border-width: 2px 2px 2px 2px;
+    border-style: solid; */
+  margin-bottom: 20px;
+}
+
+.AwayTeam > tbody > tr > td {
+  /* display: flex;
+    justify-content: flex-start; */
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  font-family: "Oswald", sans-serif;
+  width: 170px;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+#AwayTeamIcon {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.TeamStats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.MainStats {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0px 20px 0px;
+  height: 70px;
+  /* background-color: orange; */
+  /* width: 300px; */
+}
+
+#TotalMatches {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-width: 2px 2px 2px 2px;
+  /* border: 1px; */
+  border-style: solid;
+  width: 150px;
+}
+
+#TotalMatches span {
+  font-family: "Oswald", sans-serif;
+  /* font-weight: 400; */
+  display: flex;
+  justify-content: center;
+}
+
+#TotalPlayed {
+  font-size: 25px;
+  /* font-weight: 700; */
+}
+
+#TotalWins {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-width: 2px 2px 2px 0px;
+  border-style: solid;
+  width: 80px;
+}
+
+#TotalWins span {
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  /* font-weight: 400; */
+}
+
+#Wins {
+  font-size: 25px;
+  /* font-weight: 700; */
+}
+
+#TotalLosses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-width: 2px 2px 2px 0px;
+  border-style: solid;
+  width: 80px;
+}
+
+#TotalLosses span {
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  /* font-weight: 400; */
+}
+
+#Losses {
+  font-size: 25px;
+  /* font-weight: 700; */
+}
+
+#TotalGoals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-width: 2px 2px 2px 0px;
+  border-style: solid;
+  width: 80px;
+}
+
+#TotalGoals span {
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  /* font-weight: 400; */
+}
+
+#Goals {
+  font-size: 25px;
+  /* font-weight: 700; */
+}
+
+#TotalGoalsConceded {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-width: 2px 2px 2px 0px;
+  border-style: solid;
+  width: 150px;
+}
+
+#TotalGoalsConceded span {
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  /* font-weight: 400; */
+}
+
+#GoalsConceded {
+  font-size: 25px;
+  /* font-weight: 700; */
+}

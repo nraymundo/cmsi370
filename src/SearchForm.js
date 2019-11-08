@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 
 import "./SearchForm.css";
 
 import SearchResults from "./SearchResults";
 
 import { searchTeams } from "./api";
+import DropdownItem from "react-bootstrap/DropdownItem";
 
 const SearchForm = () => {
   const [error, setError] = useState(null);
@@ -50,6 +52,24 @@ const SearchForm = () => {
           onChange={handleQueryChange}
           placeholder={"Search"}
         />
+        {/* <Dropdown id="dropdownButton">
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Category
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu class="dropdownContent">
+            <Dropdown.Item id="dropdownContent1" href="#/action-1">
+              Team
+            </Dropdown.Item>
+            <Dropdown.Item id="dropdownContent2" href="#/action-2">
+              League
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown> */}
+        <DropdownButton id="dropdownButton" title="Category">
+          <Dropdown.Item as="button">Team</Dropdown.Item>
+          <Dropdown.Item as="button">League</Dropdown.Item>
+        </DropdownButton>
         <button id="searchButton" type="submit" disabled={!query}>
           Search
         </button>

@@ -4,14 +4,14 @@ import "./SearchResults.css";
 
 // import searchTeams from "./api.js";
 
-import TeamInfo from "./TeamInfo";
-// import TeamStats from "./TeamStats";
+// import TeamInfo from "./TeamInfo";
+import LeagueInfo from "./LeagueInfo";
 
 const SearchResults = props => {
   return (
     <div className="SearchResults">
       {props.results.map(data => (
-        <TeamInfo key={data.team_id} data={data} />
+        <LeagueInfo key={data.team_id} data={data} />
       ))}
 
       {/* {props.content.map(data => (

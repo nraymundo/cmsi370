@@ -64,3 +64,53 @@
   font-size: 15px;
   width: 80px;
 }
+
+#dropdownButton {
+  display: flex;
+  justify-content: center;
+  background-color: #40798c;
+  border: 2px;
+  border-color: black;
+  color: #23272a;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  width: 80px;
+  height: 32px;
+}
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* .dropdownContent {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* #dropdownContent1 {
+  background-color: #40798c;
+  border: 2px;
+  border-color: black;
+  color: #23272a;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  width: 80px;
+}
+
+#dropdownContent2 {
+  background-color: #40798c;
+  border: 2px;
+  border-color: black;
+  color: #23272a;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  width: 80px;
+} */
