@@ -1,7 +1,7 @@
 const apiHost = () => {}; // No-op in our mock version.
 
 const searchTeams = () =>
-  Promise.resolve({
+Promise.resolve({
     data: [
       {
         team_id: 47,
@@ -17,7 +17,7 @@ const searchTeams = () =>
         venue_capacity: 62062
       }
     ]
-  });
+});
 
 const TeamFixtures = () =>
 Promise.resolve({
@@ -1982,7 +1982,7 @@ Promise.resolve({
 });
 
 const TeamStats = () =>
-  Promise.resolve({
+Promise.resolve({
     data: [
         {
             "api": {
@@ -2038,6 +2038,16 @@ const TeamStats = () =>
             }
         }
     ]
-  });
+});
 
-export { apiHost, searchTeams, TeamFixtures, LeagueTable, TeamStats };
+const FetchTeamStats = async () => {
+    const stats = await fetch("https://api-football-v1.p.rapidapi.com/v2/statistics/524/47", {
+        headers: {
+            "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+            "x-rapidapi-key": "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee"
+        }
+    });
+    return stats.json();
+};
+
+export { apiHost, searchTeams, TeamFixtures, LeagueTable, TeamStats, FetchTeamStats };

@@ -5,7 +5,7 @@ import "./react-tabs.css";
 
 import "./TeamInfo.css";
 
-import { TeamFixtures, LeagueTable, TeamStats } from "./api.js";
+import { TeamFixtures, LeagueTable, TeamStats, FetchTeamStats } from "./api.js";
 // import { apiHost } from "./api";
 
 // import TeamStats from "./TeamStats";
@@ -52,10 +52,19 @@ const TeamInfo = props => {
     }
   };
 
+  // const fetchStats = async event => {
+  //   try {
+  //     const result = await TeamStats({});
+  //     setStats(result.data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
   const fetchStats = async event => {
     try {
-      const result = await TeamStats({});
-      setStats(result.data);
+      const result = await FetchTeamStats();
+      setStats(result);
     } catch (e) {
       console.log(e);
     }
@@ -294,62 +303,40 @@ const TeamInfo = props => {
             </div>
           </TabPanel>
           <TabPanel className="TeamStats">
-            {stats[0] && (
+            {stats.api && (
               <div className="MainStats">
                 <div id="TotalMatches">
                   <span>Matches played</span>
                   <span id="TotalPlayed">
-                    {stats[0].api.statistics.matchs.matchsPlayed.total}
+                    {stats.api.statistics.matchs.matchsPlayed.total}
                   </span>
                 </div>
                 <div id="TotalWins">
                   <span>Wins</span>
                   <span id="Wins">
-                    {stats[0].api.statistics.matchs.wins.total}
+                    {stats.api.statistics.matchs.wins.total}
                   </span>
                 </div>
                 <div id="TotalLosses">
                   <span>Losses</span>
                   <span id="Losses">
-                    {stats[0].api.statistics.matchs.loses.total}
+                    {stats.api.statistics.matchs.loses.total}
                   </span>
                 </div>
                 <div id="TotalGoals">
                   <span>Goals</span>
                   <span id="Goals">
-                    {stats[0].api.statistics.goals.goalsFor.total}
+                    {stats.api.statistics.goals.goalsFor.total}
                   </span>
                 </div>
                 <div id="TotalGoalsConceded">
                   <span>Goals conceded</span>
                   <span id="GoalsConceded">
-                    {stats[0].api.statistics.goals.goalsAgainst.total}
+                    {stats.api.statistics.goals.goalsAgainst.total}
                   </span>
                 </div>
               </div>
             )}
-            {/* {stats[0] && (
-                <div id="TotalWins">
-                  {stats[0].api.statistics.matchs.matchsPlayed.wins}
-                </div>
-              )} */}
-            {/* {stats[0] && (
-                <div>{stats[0].api.statistics.matchs.matchsPlayed.losses}</div>
-              )} */}
-            {/* <div>teams.api.statistics.goalsAvg.goalsFor.total</div> */}
-            {/* {stats[0] &&
-                stats.map(teams => (
-                  <div>
-                    {teams.api.statistics.goalsAvg.goalsFor.total}
-                  </div>
-                ))} */}
-            {/* </div> */}
-            {/* {table[0] &&
-              table[0].api.standings[0].map(teams => (
-                <tr>
-                  <td>{teams.rank}</td>
-                </tr>
-              ))} */}
           </TabPanel>
         </Tabs>
       </div>
