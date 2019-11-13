@@ -9,15 +9,33 @@ import SearchResults from "./SearchResults";
 
 import { searchTeams } from "./api";
 import { teams } from "./teams.js";
+import { leagues } from "./leagues.js";
 
-const options = ["Category", "Team", "League"];
-const defaultOption = options[0];
+// const options = ["Category", "Team", "League"];
+// const defaultOption = options[0];
+
+function getTeamId(search) {
+  if (search.toUpperCase() in teams) {
+    let team = search.toUpperCase();
+    return "/teams/team/" + teams[team].team_id;
+  } else if (search.toUpperCase() in leagues) {
+    let league = search.toUpperCase();
+    return "/leagues/league/" + leagues[league];
+  } else {
+    return 0;
+  }
+}
+
+function getLeagueId(search) {
+  let team = search.toUpperCase();
+  return teams[team].league_id + "/";
+}
 
 const SearchForm = () => {
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
-  const [type, setType] = useState("");
-  const [data, setData] = useState([]);
+  const [teamLeagueInfo, setData] = useState([]);
+  const [teamStats, setStats] = useState({});
 
   const handleQueryChange = event => setQuery(event.target.value);
   // const handleTypeChange = event => setType(event.target.value);
@@ -29,21 +47,25 @@ const SearchForm = () => {
 
     try {
       const result = await searchTeams({
-        // category: type,
-        query
+        q: getTeamId(query)
       });
-      setData(result.data);
+
+      setData(result);
     } catch (error) {
-      setError("Something went wrong.");
+      console.log("error", error);
+      setError("Sorry, that team or league doesn't exist.");
+    }
+
+    try {
+      const result = await searchTeams({
+        team: getTeamId(query),
+        league: getLeagueId(query)
+      });
+      setStats(result.data);
+    } catch (e) {
+      console.log(e);
     }
   };
-
-  // try {
-  //   const result = await searchTeamLiverpool({});
-  //   setImages(result.data);
-  // } catch (error) {
-  //   setError("Sorry, but something went wrong.");
-  // }
 
   return (
     <form className="SearchForm" onSubmit={performQuery}>
@@ -59,22 +81,6 @@ const SearchForm = () => {
           onChange={handleQueryChange}
           placeholder={"Search"}
         />
-        {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-          <Dropdown.Item name="type" value={type} onClick={handleTypeChange}>
-            Team
-          </Dropdown.Item>
-          <Dropdown.Item name="type" value={type} onClick={handleTypeChange}>
-            League
-          </Dropdown.Item>
-        </DropdownButton> */}
-        <Dropdown
-          options={options}
-          // name="type"
-          // value={type}
-          // onChange={handleTypeChange}
-          placeholder="Category"
-        />
-        {/* <button onClick={console.log(type)}></button> */}
         <button id="searchButton" type="submit" disabled={!query}>
           Search
         </button>
@@ -82,7 +88,7 @@ const SearchForm = () => {
 
       {error && <div className="error">{error}</div>}
 
-      <SearchResults results={data} />
+      <SearchResults info={teamLeagueInfo} stats={teamStats} />
     </form>
   );
 };

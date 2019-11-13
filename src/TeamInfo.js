@@ -1,38 +1,25 @@
 import React, { useEffect, useState } from "react";
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "./react-tabs.css";
 
+import "./react-tabs.css";
 import "./TeamInfo.css";
 
-import { TeamFixtures, LeagueTable, TeamStats, FetchTeamStats } from "./api.js";
+import { teams } from "./teams.js";
+
+import {
+  TeamFixtures,
+  LeagueTable,
+  TeamStats
+  // FetchTeamStats,
+  // FetchLeagueTable
+} from "./api.js";
 // import { apiHost } from "./api";
-
-// import TeamStats from "./TeamStats";
-
-// import React, { Component } from "react";
-// import Button from "./Button"; // Import a component from another file
-// class DangerButton extends Component {
-//   render() {
-//     return <Button color="red" />;
-//   }
-// }
-
-// JSON.parse(JSON.stringify(yourjson).replace(/null/g, '""'));
 
 const TeamInfo = props => {
   const { data } = props;
   const [fixtures, setFixtures] = useState({});
   const [table, setTable] = useState({});
   const [stats, setStats] = useState({});
-
-  // const mappingFunction = p => p.team_name;
-  // if (fixtures[0] != undefined) {
-  //   const names = (fixtures[0] && fixtures[0].fixtures[0].homeTeam).map(
-  //     mappingFunction
-  //   );
-  //   console.log(names);
-  // }
 
   const fetchFixtures = async event => {
     try {
@@ -52,10 +39,10 @@ const TeamInfo = props => {
     }
   };
 
-  // const fetchStats = async event => {
+  // const fetchTable = async event => {
   //   try {
-  //     const result = await TeamStats({});
-  //     setStats(result.data);
+  //     const result = await FetchLeagueTable();
+  //     setTable(result);
   //   } catch (e) {
   //     console.log(e);
   //   }
@@ -63,12 +50,21 @@ const TeamInfo = props => {
 
   const fetchStats = async event => {
     try {
-      const result = await FetchTeamStats();
-      setStats(result);
+      const result = await TeamStats({});
+      setStats(result.data);
     } catch (e) {
       console.log(e);
     }
   };
+
+  // const fetchStats = async event => {
+  //   try {
+  //     const result = await FetchTeamStats();
+  //     setStats(result);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   useEffect(() => {
     fetchTable();
@@ -78,7 +74,7 @@ const TeamInfo = props => {
 
   return (
     <div className="Teams">
-      <div className="TeamInfo">
+      <div className="TeamHeader">
         <div className="Circle">
           <img src={data.logo} alt="blah" id="TeamLogo" />
         </div>
@@ -303,36 +299,36 @@ const TeamInfo = props => {
             </div>
           </TabPanel>
           <TabPanel className="TeamStats">
-            {stats.api && (
+            {stats[0] && (
               <div className="MainStats">
                 <div id="TotalMatches">
                   <span>Matches played</span>
                   <span id="TotalPlayed">
-                    {stats.api.statistics.matchs.matchsPlayed.total}
+                    {stats[0].api.statistics.matchs.matchsPlayed.total}
                   </span>
                 </div>
                 <div id="TotalWins">
                   <span>Wins</span>
                   <span id="Wins">
-                    {stats.api.statistics.matchs.wins.total}
+                    {stats[0].api.statistics.matchs.wins.total}
                   </span>
                 </div>
                 <div id="TotalLosses">
                   <span>Losses</span>
                   <span id="Losses">
-                    {stats.api.statistics.matchs.loses.total}
+                    {stats[0].api.statistics.matchs.loses.total}
                   </span>
                 </div>
                 <div id="TotalGoals">
                   <span>Goals</span>
                   <span id="Goals">
-                    {stats.api.statistics.goals.goalsFor.total}
+                    {stats[0].api.statistics.goals.goalsFor.total}
                   </span>
                 </div>
                 <div id="TotalGoalsConceded">
                   <span>Goals conceded</span>
                   <span id="GoalsConceded">
-                    {stats.api.statistics.goals.goalsAgainst.total}
+                    {stats[0].api.statistics.goals.goalsAgainst.total}
                   </span>
                 </div>
               </div>

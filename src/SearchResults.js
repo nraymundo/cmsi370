@@ -9,9 +9,10 @@ import TeamData from "./TeamData";
 
 const SearchResults = props => (
   <div className="SearchResults">
-    {props.results.map(data => (
-      <TeamData key={data.id} data={data} />
-    ))}
+    {props.info.api &&
+      props.info.api.teams.map(data => (
+        <TeamData key={data.team_id} data={data} />
+      ))}
   </div>
 );
 

@@ -45,7 +45,12 @@
   color: black;
   font-size: 20px;
   height: 30px;
+  padding-left: 10px;
   /* background-color: rgba(70, 70, 70, 0.379); */
+}
+
+:focus {
+  outline: none !important;
 }
 
 ::placeholder {
@@ -55,7 +60,7 @@
 }
 
 .SearchBar button {
-  background-color: #40798c;
+  background-color: #dd7373;
   border: 2px;
   border-color: black;
   color: #23272a;
