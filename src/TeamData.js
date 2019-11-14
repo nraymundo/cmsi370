@@ -176,13 +176,13 @@ const TeamData = props => {
             </div>
           </TabPanel>
           <TabPanel className="TeamFixtures">
-            {/* {console.log(fixtures[0])} */}
+            {console.log(fixtures[0])}
             <div className="FixturesTab">
               <div className="GameInfo">
                 <table className="HomeTeam">
                   <tbody>
                     {fixtures[0] &&
-                      fixtures[0].goalsHomeTeam &&
+                      fixtures[0].goalsHomeTeam !== null &&
                       fixtures.map(teams => (
                         <tr>
                           <td>
@@ -200,7 +200,7 @@ const TeamData = props => {
                 <table className="Score">
                   <tbody>
                     {fixtures[0] &&
-                      fixtures[0].goalsHomeTeam &&
+                      fixtures[0].goalsHomeTeam !== null &&
                       fixtures.map(teams => (
                         <tr>
                           <td>
@@ -217,7 +217,7 @@ const TeamData = props => {
                 <table className="AwayTeam">
                   <tbody>
                     {fixtures[0] &&
-                      fixtures[0].goalsHomeTeam &&
+                      fixtures[0].goalsHomeTeam !== null &&
                       fixtures.map(teams => (
                         <tr>
                           <td>

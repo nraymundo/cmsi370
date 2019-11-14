@@ -23,6 +23,7 @@ const TeamData = props => {
             </div>
           </div>
           <div className="Teams">
+            {Object.keys(table).length == 2}
             {table[0] &&
               table[0].map(teams => (
                 <div className="TeamInfo">

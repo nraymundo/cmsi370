@@ -1,52 +1,20 @@
 import React, { useEffect, useState } from "react";
 
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./react-tabs.css";
-
 import "./LeagueInfo.css";
 
 import {
-  TeamFixtures,
+  //   TeamFixtures,
   LeagueTable,
-  FetchLeagueInfo,
+  //   FetchLeagueInfo,
   LeagueInfo
 } from "./api.js";
-// import { apiHost } from "./api";
-
-// import TeamStats from "./TeamStats";
-
-// import React, { Component } from "react";
-// import Button from "./Button"; // Import a component from another file
-// class DangerButton extends Component {
-//   render() {
-//     return <Button color="red" />;
-//   }
-// }
-
-// JSON.parse(JSON.stringify(yourjson).replace(/null/g, '""'));
 
 const TeamInfo = props => {
-  const { data } = props;
-  const [fixtures, setFixtures] = useState({});
+  //   const { data } = props;
+  //   const [fixtures, setFixtures] = useState({});
   const [table, setTable] = useState({});
   const [info, setInfo] = useState({});
-
-  // const mappingFunction = p => p.team_name;
-  // if (fixtures[0] != undefined) {
-  //   const names = (fixtures[0] && fixtures[0].fixtures[0].homeTeam).map(
-  //     mappingFunction
-  //   );
-  //   console.log(names);
-  // }
-
-  const fetchFixtures = async event => {
-    try {
-      const result = await TeamFixtures({});
-      setFixtures(result.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
   const fetchTable = async event => {
     try {
@@ -77,23 +45,37 @@ const TeamInfo = props => {
 
   useEffect(() => {
     fetchTable();
-    fetchFixtures();
+    // fetchFixtures();
     fetchInfo();
   }, []);
 
   return (
-    <div className="League">
+    <div>
       {info.data && (
-        <div className="LeagueHeader">
-          <div className="LeagueName">
-            <p>{info.data[0].api.leagues[0].name}</p>
+        <div className="League">
+          <div className="LeagueHeader">
+            <div className="LeagueName">
+              <p>{info.data[0].api.leagues[0].name}</p>
+            </div>
+            <div className="LeagueInfo">
+              <p>
+                {info.data[0].api.leagues[0].country},{" "}
+                {info.data[0].api.leagues[0].country_code}
+              </p>
+              <p>{info.data[0].api.leagues[0].season} Season</p>
+            </div>
           </div>
-          <div className="LeagueInfo">
-            <p>
-              {info.data[0].api.leagues[0].country},{" "}
-              {info.data[0].api.leagues[0].country_code}
-            </p>
-            <p>{info.data[0].api.leagues[0].season}</p>
+          <div className="Teams">
+            {table[0].api.standings[0].map(teams => (
+              <div className="TeamInfo">
+                <div>
+                  <img src={teams.logo} alt="logo" className="TeamLogo"></img>
+                </div>
+                <div>{teams.rank}</div>
+                <div>{teams.teamName}</div>
+                <div>Points: {teams.points}</div>
+              </div>
+            ))}
           </div>
         </div>
       )}
