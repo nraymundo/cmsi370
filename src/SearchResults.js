@@ -6,7 +6,6 @@ import "./SearchResults.css";
 
 import TeamData from "./TeamData";
 import LeagueData from "./LeagueData";
-// import LeagueInfo from "./LeagueInfo";
 
 const SearchResults = props => (
   <div className="SearchResults">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import "./dropdown.css";
 import "./SearchForm.css";
 
 import SearchResults from "./SearchResults";

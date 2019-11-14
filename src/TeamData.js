@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import "./react-tabs.css";
-import "./TeamInfo.css";
+import "./TeamData.css";
 
 const TeamData = props => {
   const { data } = props;
