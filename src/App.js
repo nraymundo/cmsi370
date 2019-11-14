@@ -21,7 +21,6 @@ const App = () => {
     <div className="App">
       <AppHeader />
       <SearchForm />
-      {/* <Carousel /> */}
     </div>
   );
 };

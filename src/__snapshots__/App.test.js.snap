@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render App 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="AppHeader"
+  >
+    <h1>
+      Take That For Data
+    </h1>
+    <h2>
+      Data from the teams in the Premier League, Bundesliga, Serie A, and La Liga
+    </h2>
+  </div>
+  <form
+    className="SearchForm"
+    onSubmit={[Function]}
+  >
+    <div
+      className="SearchBar"
+    >
+      <input
+        autoComplete="off"
+        id="search"
+        name="query"
+        onChange={[Function]}
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+      <button
+        disabled={true}
+        id="searchButton"
+        type="submit"
+      >
+        Search
+      </button>
+    </div>
+    <div
+      className="SearchResults"
+    />
+  </form>
+</div>
+`;
