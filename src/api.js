@@ -31,14 +31,22 @@ const okCheck = statusCheck([HTTP_OK]);
 
 const headers = {
   "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-  "x-rapidapi-key": "bf32125d6dmsh076931bf8d25573p17b9f7jsn552250c042f3"
+  "x-rapidapi-key": "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee"
 };
 
 const parameters = params => {
   const result = new URLSearchParams(params);
-  return result.get("q");
-  //   result.set("api_key", API_KEY);
-  //   return result;
+  if (result.get("category") === "search") {
+    return result.get("team");
+  } else if (result.get("category") === "teamStats") {
+    return result.get("league") + "/" + result.get("team");
+  } else if (result.get("category") === "league") {
+    return result.get("league");
+  } else if (result.get("category") === "table") {
+    return result.get("league");
+  } else if (result.get("category") === "fixtures") {
+    return result.get("team") + "/" + result.get("league");
+  }
 };
 
 const query = (resource, params) =>
@@ -48,38 +56,35 @@ const query = (resource, params) =>
     .then(okCheck, emitNativeError)
     .then(response => response.json());
 
-const searchTeams = params => query("/v2/", params);
+const searchTeams = params => query("/v2/teams/team/", params);
+
+const searchLeagues = params => query("/v2/leagues/league/", params);
 
 const returnTeamStats = params => query("/v2/statistics/", params);
 
-// const FetchTeamStats = async () => {
-//   const stats = await fetch(
-//     "https://api-football-v1.p.rapidapi.com/v2/statistics/524/47",
-//     {
-//       headers: {
-//         "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-//         "x-rapidapi-key": "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee"
-//       }
-//     }
-//   );
-//   return stats.json();
-// };
+const returnLeagueTable = params => query("/v2/leagueTable/", params);
 
-// const FetchLeagueInfo = async () => {
-//   const info = await fetch(
-//     "https://api-football-v1.p.rapidapi.com/v2/leagues/league/524",
-//     {
-//       headers: {
-//         "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-//         "x-rapidapi-key": "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee"
-//       }
-//     }
-//   );
-//   return info.json();
-// };
+const returnTeamFixtures = params => query("/v2/fixtures/team/", params);
 
-export { apiHost, searchTeams, returnTeamStats };
+const FetchTeamStats = async () => {
+  const stats = await fetch(
+    "https://api-football-v1.p.rapidapi.com/v2/leagueTable/524",
+    {
+      headers: {
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+        "x-rapidapi-key": "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee"
+      }
+    }
+  );
+  return stats.json();
+};
 
-// const apiHost = () => {}; // No-op in our mock version.
-
-// export { apiHost, searchTeamTottenham, searchTeamLiverpool, TeamFixtures, LeagueTable, TeamStats, LeagueInfo, FetchLeagueTable, FetchTeamInfo };
+export {
+  apiHost,
+  searchTeams,
+  searchLeagues,
+  returnTeamStats,
+  returnLeagueTable,
+  returnTeamFixtures,
+  FetchTeamStats
+};
