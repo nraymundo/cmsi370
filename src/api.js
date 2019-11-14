@@ -11,6 +11,7 @@ const HTTP_OK = 200;
 
 const throwResponseError = response => {
   const error = new Error(response.statusText);
+  console.log("error", error);
   error.response = response;
   throw error;
 };
@@ -20,18 +21,25 @@ const emitNativeError = error => {
 };
 
 const statusCheck = successStatuses => response => {
-  if (successStatuses.includes(response.status)) {
-    return response;
-  } else {
-    throwResponseError(response);
-  }
+  //   if (successStatuses.includes(response.status)) {
+  //     return response;
+  //   } else {
+  //     throwResponseError(response);
+  //   }
+  //   if (response.bodyUsed) {
+  //     return response;
+  //   } else {
+  //     throwResponseError(response);
+  //   }
+  console.log("succ ", response);
+  return response;
 };
 
 const okCheck = statusCheck([HTTP_OK]);
 
 const headers = {
   "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-  "x-rapidapi-key": "f702606e13msh89e4fc535a01b6ep103f9ajsn9e8eefbd8bb7"
+  "x-rapidapi-key": "a33e3f89c7mshef7125c633481b7p130005jsn350b4dc5d554"
 };
 
 const parameters = params => {
@@ -46,6 +54,8 @@ const parameters = params => {
     return result.get("league");
   } else if (result.get("category") === "fixtures") {
     return result.get("team") + "/" + result.get("league");
+  } else {
+    return result;
   }
 };
 
@@ -55,6 +65,8 @@ const query = (resource, params) =>
   })
     .then(okCheck, emitNativeError)
     .then(response => response.json());
+
+const tryIt = params => console.log("tried ", query("/v2/teams/team/", params));
 
 const searchTeams = params => query("/v2/teams/team/", params);
 
@@ -86,5 +98,6 @@ export {
   returnTeamStats,
   returnLeagueTable,
   returnTeamFixtures,
-  FetchTeamStats
+  FetchTeamStats,
+  tryIt
 };

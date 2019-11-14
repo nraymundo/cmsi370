@@ -5,23 +5,24 @@ exports[`should start with a disabled search button 1`] = `
   className="SearchForm"
   onSubmit={[Function]}
 >
-  <p>
-    Enter a search term:
-  </p>
-  <input
-    name="query"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
   <div
-    className="ButtonBar"
+    className="SearchBar"
   >
+    <input
+      autoComplete="off"
+      id="search"
+      name="query"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
     <button
       disabled={true}
+      id="searchButton"
       type="submit"
     >
-      Search Giphy!
+      Search
     </button>
   </div>
   <div
@@ -35,23 +36,24 @@ exports[`should start with an empty search field 1`] = `
   className="SearchForm"
   onSubmit={[Function]}
 >
-  <p>
-    Enter a search term:
-  </p>
-  <input
-    name="query"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
   <div
-    className="ButtonBar"
+    className="SearchBar"
   >
+    <input
+      autoComplete="off"
+      id="search"
+      name="query"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
     <button
       disabled={true}
+      id="searchButton"
       type="submit"
     >
-      Search Giphy!
+      Search
     </button>
   </div>
   <div

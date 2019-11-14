@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-// import Dropdown from "react-dropdown";
-// import { Dropdown, DropdownButton } from "react-bootstrap";
 
 import "./dropdown.css";
 import "./SearchForm.css";
 
 import SearchResults from "./SearchResults";
-import teamList from "./teams.js";
 
 import {
   searchTeams,
@@ -15,6 +12,7 @@ import {
   returnLeagueTable,
   returnTeamFixtures
 } from "./api";
+
 import { teams } from "./teams.js";
 import { leagues } from "./leagues.js";
 
@@ -26,7 +24,7 @@ function getId(search) {
     let league = search.toUpperCase();
     return leagues[league];
   } else {
-    return 0;
+    return search;
   }
 }
 
@@ -67,7 +65,6 @@ const SearchForm = () => {
         });
         setTeam(result);
       } catch (error) {
-        console.log("error", error);
         setError("Sorry, that team doesn't exist.");
       }
 
@@ -78,8 +75,8 @@ const SearchForm = () => {
           category: "teamStats"
         });
         setStats(result.api.statistics);
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        setError("Sorry, that team doesn't exist.");
       }
 
       try {
@@ -88,8 +85,8 @@ const SearchForm = () => {
           category: "table"
         });
         setTable(result.api.standings);
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        setError("Sorry, that team doesn't exist.");
       }
 
       try {
@@ -99,8 +96,8 @@ const SearchForm = () => {
           category: "fixtures"
         });
         setFixtures(result.api.fixtures);
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        setError("Sorry, that team doesn't exist.");
       }
     } else if (checkCategory(query) === "League") {
       try {
@@ -110,7 +107,6 @@ const SearchForm = () => {
         });
         setLeague(result);
       } catch (error) {
-        console.log("error", error);
         setError("Sorry, that league doesn't exist.");
       }
 
@@ -120,11 +116,10 @@ const SearchForm = () => {
           category: "table"
         });
         setTable(result.api.standings);
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        setError("Sorry, that league doesn't exist.");
       }
     }
-    // console.log("Data: ", leagueInfo);
   };
 
   return (
