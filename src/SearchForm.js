@@ -144,27 +144,19 @@ const SearchForm = () => {
           Search
         </button>
       </div>
+
       {error && <div className="error">{error}</div>}
 
-      {teamInfo !== [] ? (
+      {teamInfo.length === 0 ? (
+        <SearchResults info={leagueInfo} table={leagueTable} />
+      ) : (
         <SearchResults
           info={teamInfo}
           stats={teamStats}
           table={leagueTable}
           fixtures={teamFixtures}
         />
-      ) : (
-        <SearchResults info={leagueInfo} table={leagueTable} />
       )}
-
-      {/* <SearchResults info={leagueInfo} table={leagueTable} /> */}
-
-      {/* <SearchResults
-        info={teamInfo}
-        stats={teamStats}
-        table={leagueTable}
-        fixtures={teamFixtures}
-      /> */}
     </form>
   );
 };
