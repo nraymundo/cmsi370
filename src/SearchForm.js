@@ -146,7 +146,7 @@ const SearchForm = () => {
       </div>
       {error && <div className="error">{error}</div>}
 
-      {/* {teamInfo !== [] ? (
+      {teamInfo !== [] ? (
         <SearchResults
           info={teamInfo}
           stats={teamStats}
@@ -155,9 +155,9 @@ const SearchForm = () => {
         />
       ) : (
         <SearchResults info={leagueInfo} table={leagueTable} />
-      )} */}
+      )}
 
-      <SearchResults info={leagueInfo} table={leagueTable} />
+      {/* <SearchResults info={leagueInfo} table={leagueTable} /> */}
 
       {/* <SearchResults
         info={teamInfo}

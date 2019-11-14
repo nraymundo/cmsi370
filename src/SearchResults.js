@@ -10,21 +10,24 @@ import LeagueData from "./LeagueData";
 
 const SearchResults = props => (
   <div className="SearchResults">
-    {/* {props.info.api !== [] ? (
-      <SearchResults
-        info={teamInfo}
-        stats={teamStats}
-        table={leagueTable}
-        fixtures={teamFixtures}
-      />
-    ) : (
-      <SearchResults info={leagueInfo} table={leagueTable} />
-    )} */}
-    {props.info.api &&
+    {/* {props.info.api.teams !== undefined
+      ? props.info.api.teams.map(data => (
+          <TeamData
+            key={data.team_id}
+            data={data}
+            stats={props.stats}
+            table={props.table}
+            fixtures={props.fixtures}
+          />
+        ))
+      : props.info.api.leagues.map(data => (
+          <LeagueData key={data.league_id} data={data} table={props.table} />
+        ))} */}
+    {/* {props.info.api &&
       props.info.api.leagues.map(data => (
         <LeagueData key={data.league_id} data={data} table={props.table} />
-      ))}
-    {/* {props.info.api &&
+      ))} */}
+    {props.info.api &&
       props.info.api.teams.map(data => (
         <TeamData
           key={data.team_id}
@@ -33,7 +36,7 @@ const SearchResults = props => (
           table={props.table}
           fixtures={props.fixtures}
         />
-      ))} */}
+      ))}
   </div>
 );
 
