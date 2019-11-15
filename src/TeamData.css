@@ -27,7 +27,7 @@
 .TeamData {
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
+  margin-left: 25px;
   align-items: flex-start;
 }
 
