@@ -1,13 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import TestRenderer from "react-test-renderer";
-import ReactTestUtils from "react-dom/test-utils";
-
-import sinon from "sinon";
 
 import LeagueData from "./LeagueData";
-
-import * as api from "./api";
 
 it("should render LeagueData", () => {
   const component = TestRenderer.create(

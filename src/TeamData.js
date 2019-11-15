@@ -176,7 +176,6 @@ const TeamData = props => {
             </div>
           </TabPanel>
           <TabPanel className="TeamFixtures">
-            {console.log(fixtures[0])}
             <div className="FixturesTab">
               <div className="GameInfo">
                 <table className="HomeTeam">
