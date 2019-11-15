@@ -4,6 +4,26 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./react-tabs.css";
 import "./TeamData.css";
 
+let homeGoals = [];
+let updatedHomeGoals = [];
+let awayGoals = [];
+let updatedAwayGoals = [];
+
+function addToList(list, int) {
+  list.push(int);
+  // return list;
+}
+
+function findNumValues(list) {
+  let counter = 0;
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] !== null) {
+      counter++;
+    }
+  }
+  return list.slice(0, counter);
+}
+
 const TeamData = props => {
   const { data } = props;
   const { stats } = props;
@@ -196,18 +216,45 @@ const TeamData = props => {
                       ))}
                   </tbody>
                 </table>
-                <table className="Score">
+                <table className="HomeTeamScore">
+                  {fixtures[0] &&
+                    fixtures.map(teams =>
+                      addToList(homeGoals, teams.goalsHomeTeam)
+                    )}
                   <tbody>
                     {fixtures[0] &&
-                      fixtures[0].goalsHomeTeam !== null &&
-                      fixtures.map(teams => (
+                      findNumValues(homeGoals).map(teams => (
                         <tr>
                           <td>
-                            <span>
-                              {teams.goalsHomeTeam +
-                                " - " +
-                                teams.goalsAwayTeam}
-                            </span>
+                            <span>{teams}</span>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="HomeTeamScore">
+                  <tbody>
+                    {fixtures[0] &&
+                      findNumValues(homeGoals).map(teams => (
+                        <tr>
+                          <td>
+                            <span>-</span>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <table className="AwayTeamScore">
+                  {fixtures[0] &&
+                    fixtures.map(teams =>
+                      addToList(awayGoals, teams.goalsAwayTeam)
+                    )}
+                  <tbody>
+                    {fixtures[0] &&
+                      findNumValues(awayGoals).map(teams => (
+                        <tr>
+                          <td>
+                            <span>{teams}</span>
                           </td>
                         </tr>
                       ))}

@@ -121,7 +121,7 @@ const SearchForm = () => {
           autoComplete="off"
           value={query}
           onChange={handleQueryChange}
-          placeholder={"Search"}
+          placeholder={"Team or league"}
         />
         <button id="searchButton" type="submit" disabled={!query}>
           Search

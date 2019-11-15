@@ -3,11 +3,23 @@ export const teams = {
     team_id: 47,
     league_id: 524
   },
+  HOTSPUR: {
+    team_id: 47,
+    league_id: 524
+  },
+  "TOTTENHAM HOTSPUR": {
+    team_id: 47,
+    league_id: 524
+  },
   LIVERPOOL: {
     team_id: 40,
     league_id: 524
   },
   "MANCHESTER CITY": {
+    team_id: 50,
+    league_id: 524
+  },
+  "MAN CITY": {
     team_id: 50,
     league_id: 524
   },
@@ -28,6 +40,10 @@ export const teams = {
     league_id: 524
   },
   "MANCHESTER UNITED": {
+    team_id: 33,
+    league_id: 524
+  },
+  "MAN U": {
     team_id: 33,
     league_id: 524
   },
@@ -80,6 +96,10 @@ export const teams = {
     league_id: 524
   },
   BARCELONA: {
+    team_id: 529,
+    league_id: 775
+  },
+  BARCA: {
     team_id: 529,
     league_id: 775
   },
@@ -299,6 +319,10 @@ export const teams = {
     team_id: 85,
     league_id: 525
   },
+  PSG: {
+    team_id: 85,
+    league_id: 525
+  },
   NIMES: {
     team_id: 92,
     league_id: 525
@@ -321,74 +345,82 @@ export const teams = {
   },
   "BAYERN MUNICH": {
     team_id: 157,
-    league_id: 891
+    league_id: 754
+  },
+  BAYERN: {
+    team_id: 157,
+    league_id: 754
   },
   "HERTHA BERLIN": {
     team_id: 159,
-    league_id: 891
+    league_id: 754
   },
   "BORUSSIA DORTMUND": {
     team_id: 165,
-    league_id: 891
+    league_id: 754
+  },
+  DORTMUND: {
+    team_id: 165,
+    league_id: 754
   },
   "FC AUGSBURG": {
     team_id: 170,
-    league_id: 891
+    league_id: 754
   },
   "BAYER LEVERKUSEN": {
     team_id: 168,
-    league_id: 891
+    league_id: 754
   },
   "SC PADERBORN 07": {
     team_id: 185,
-    league_id: 891
+    league_id: 754
   },
   "VFL WOLFSBURG": {
     team_id: 161,
-    league_id: 891
+    league_id: 754
   },
   "FC KOLN": {
     team_id: 192,
-    league_id: 891
+    league_id: 754
   },
   "WERDER BREMEN": {
     team_id: 162,
-    league_id: 891
+    league_id: 754
   },
   "FORTUNA DUSSELDORF": {
     team_id: 158,
-    league_id: 891
+    league_id: 754
   },
   "SC FREIBURG": {
     team_id: 160,
-    league_id: 891
+    league_id: 754
   },
   "FSV MAINZ 05": {
     team_id: 164,
-    league_id: 891
+    league_id: 754
   },
   "BORUSSIA MONCHENGLADBACH": {
     team_id: 163,
-    league_id: 891
+    league_id: 754
   },
   "FC SCHALKE 04": {
     team_id: 174,
-    league_id: 891
+    league_id: 754
   },
   "EINTRACHT FRANKFURT": {
     team_id: 169,
-    league_id: 891
+    league_id: 754
   },
   "1899 HOFFENHEIM": {
     team_id: 167,
-    league_id: 891
+    league_id: 754
   },
   "UNION BERLIN": {
     team_id: 182,
-    league_id: 891
+    league_id: 754
   },
   "RB LEIPZIG": {
     team_id: 173,
-    league_id: 891
+    league_id: 754
   }
 };

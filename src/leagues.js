@@ -3,5 +3,6 @@ export const leagues = {
   "LA LIGA": 775,
   "PRIMERA DIVISION": 775,
   "SERIE A": 891,
+  "LIGUE 1": 525,
   BUNDESLIGA: 754
 };

@@ -1,16 +1,14 @@
 .AppHeader h1 {
   color: black;
-  /* text-shadow: #dcc48e 1px 1px; */
-  font-family: "Oswald", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .AppHeader h2 {
   color: #808080;
-  /* text-shadow: #dcc48e 1px 1px; */
-  margin-top: -30px;
-  font-family: "Oswald", sans-serif;
+  margin-top: -50px;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-size: 20px;
 }

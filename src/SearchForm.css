@@ -4,15 +4,6 @@
   align-items: center;
 }
 
-/* .SearchForm > .ButtonBar {
-  display: flex;
-} */
-
-/* .SearchForm > .ButtonBar > button {
-  margin-left: auto;
-  margin-top: 1rem;
-} */
-
 .SearchForm .error {
   background-color: pink;
   border: solid 1px red;
@@ -21,32 +12,23 @@
   padding: 1rem;
 }
 
-.SearchForm p {
-  color: #fdfffc;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  /* margin-top: -15px; */
-}
-
 .SearchBar {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .SearchBar input {
   border: none;
-  background-color: #fdfffc;
-  width: 600px;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
+  background-color: white;
+  width: 800px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
   color: black;
-  font-size: 20px;
-  height: 30px;
+  font-size: 30px;
+  height: 60px;
   padding-left: 10px;
-  /* background-color: rgba(70, 70, 70, 0.379); */
 }
 
 :focus {
@@ -54,34 +36,19 @@
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
 .SearchBar button {
-  background-color: #dd7373;
+  background-color: #94ae89;
   border: 2px;
   border-color: black;
   color: #23272a;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  width: 80px;
-}
-
-#dropdownButton {
-  display: flex;
-  justify-content: center;
-  background-color: #40798c;
-  border: 2px;
-  border-color: black;
-  color: #23272a;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  width: 80px;
-  height: 32px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  width: 110px;
 }
 
 .noSelect {
@@ -92,30 +59,3 @@
   -ms-user-select: none;
   user-select: none;
 }
-
-/* .dropdownContent {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* #dropdownContent1 {
-  background-color: #40798c;
-  border: 2px;
-  border-color: black;
-  color: #23272a;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  width: 80px;
-}
-
-#dropdownContent2 {
-  background-color: #40798c;
-  border: 2px;
-  border-color: black;
-  color: #23272a;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  width: 80px;
-} */
