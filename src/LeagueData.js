@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./react-tabs.css";
 import "./LeagueData.css";
 
-const TeamData = props => {
+const LeagueData = props => {
   const { data } = props;
   const { table } = props;
   return (
@@ -42,4 +42,4 @@ const TeamData = props => {
   );
 };
 
-export default TeamData;
+export default LeagueData;
