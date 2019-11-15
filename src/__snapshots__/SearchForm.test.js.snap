@@ -13,7 +13,7 @@ exports[`should start with a disabled search button 1`] = `
       id="search"
       name="query"
       onChange={[Function]}
-      placeholder="Search"
+      placeholder="Team or league"
       type="text"
       value=""
     />
@@ -44,7 +44,7 @@ exports[`should start with an empty search field 1`] = `
       id="search"
       name="query"
       onChange={[Function]}
-      placeholder="Search"
+      placeholder="Team or league"
       type="text"
       value=""
     />

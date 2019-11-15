@@ -11,7 +11,7 @@ exports[`should render App 1`] = `
       Take That For Data
     </h1>
     <h2>
-      Data from the teams in the Premier League, Bundesliga, Serie A, and La Liga
+      Premier League | Bundesliga | Serie A | La Liga | Ligue 1
     </h2>
   </div>
   <form
@@ -26,7 +26,7 @@ exports[`should render App 1`] = `
         id="search"
         name="query"
         onChange={[Function]}
-        placeholder="Search"
+        placeholder="Team or league"
         type="text"
         value=""
       />
