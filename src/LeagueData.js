@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import React from "react";
 
 import "./react-tabs.css";
 import "./LeagueData.css";
@@ -23,7 +22,7 @@ const LeagueData = props => {
             </div>
           </div>
           <div className="Teams">
-            {Object.keys(table).length == 2}
+            {Object.keys(table).length === 2}
             {table[0] &&
               table[0].map(teams => (
                 <div className="TeamInfo">

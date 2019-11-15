@@ -37,6 +37,8 @@ function checkCategory(search) {
     return "Team";
   } else if (search.toUpperCase() in leagues) {
     return "League";
+  } else {
+    return search;
   }
 }
 
@@ -63,38 +65,26 @@ const SearchForm = () => {
           category: "search"
         });
         setTeam(result);
-      } catch (error) {
-        setError("Sorry, that team doesn't exist.");
-      }
 
-      try {
-        const result = await returnTeamStats({
+        const result2 = await returnTeamStats({
           league: getLeagueId(query),
           team: getId(query),
           category: "teamStats"
         });
-        setStats(result.api.statistics);
-      } catch (error) {
-        setError("Sorry, that team doesn't exist.");
-      }
+        setStats(result2.api.statistics);
 
-      try {
-        const result = await returnLeagueTable({
+        const result3 = await returnLeagueTable({
           league: getLeagueId(query),
           category: "table"
         });
-        setTable(result.api.standings);
-      } catch (error) {
-        setError("Sorry, that team doesn't exist.");
-      }
+        setTable(result3.api.standings);
 
-      try {
-        const result = await returnTeamFixtures({
+        const result4 = await returnTeamFixtures({
           team: getId(query),
           league: getLeagueId(query),
           category: "fixtures"
         });
-        setFixtures(result.api.fixtures);
+        setFixtures(result4.api.fixtures);
       } catch (error) {
         setError("Sorry, that team doesn't exist.");
       }
@@ -105,19 +95,17 @@ const SearchForm = () => {
           category: "league"
         });
         setLeague(result);
-      } catch (error) {
-        setError("Sorry, that league doesn't exist.");
-      }
 
-      try {
-        const result = await returnLeagueTable({
+        const result2 = await returnLeagueTable({
           league: getId(query),
           category: "table"
         });
-        setTable(result.api.standings);
+        setTable(result2.api.standings);
       } catch (error) {
         setError("Sorry, that league doesn't exist.");
       }
+    } else {
+      setError("Sorry, that team doesn't exist.");
     }
   };
 

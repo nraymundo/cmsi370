@@ -20,26 +20,32 @@ const emitNativeError = error => {
   throw error;
 };
 
+const checkForError = (data, error) => {
+  if (data.api.hasOwnProperty("error")) {
+    throw error;
+  } else {
+    return data;
+  }
+};
+
 const statusCheck = successStatuses => response => {
-  //   if (successStatuses.includes(response.status)) {
-  //     return response;
-  //   } else {
-  //     throwResponseError(response);
-  //   }
-  //   if (response.bodyUsed) {
-  //     return response;
-  //   } else {
-  //     throwResponseError(response);
-  //   }
-  console.log("succ ", response);
-  return response;
+  if (successStatuses.includes(response.status)) {
+    return response;
+  } else {
+    throwResponseError(response);
+  }
+  if (response.bodyUsed) {
+    return response;
+  } else {
+    throwResponseError(response);
+  }
 };
 
 const okCheck = statusCheck([HTTP_OK]);
 
 const headers = {
   "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-  "x-rapidapi-key": "a33e3f89c7mshef7125c633481b7p130005jsn350b4dc5d554"
+  "x-rapidapi-key": "c146bed1b9mshee589373336de13p1fe012jsn9e800103b694"
 };
 
 const parameters = params => {
@@ -66,9 +72,8 @@ const query = (resource, params) =>
     .then(okCheck, emitNativeError)
     .then(response => response.json());
 
-const tryIt = params => console.log("tried ", query("/v2/teams/team/", params));
-
-const searchTeams = params => query("/v2/teams/team/", params);
+const searchTeams = params =>
+  query("/v2/teams/team/", params).then(checkForError);
 
 const searchLeagues = params => query("/v2/leagues/league/", params);
 
@@ -78,26 +83,11 @@ const returnLeagueTable = params => query("/v2/leagueTable/", params);
 
 const returnTeamFixtures = params => query("/v2/fixtures/team/", params);
 
-const FetchTeamStats = async () => {
-  const stats = await fetch(
-    "https://api-football-v1.p.rapidapi.com/v2/leagueTable/524",
-    {
-      headers: {
-        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-        "x-rapidapi-key": "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee"
-      }
-    }
-  );
-  return stats.json();
-};
-
 export {
   apiHost,
   searchTeams,
   searchLeagues,
   returnTeamStats,
   returnLeagueTable,
-  returnTeamFixtures,
-  FetchTeamStats,
-  tryIt
+  returnTeamFixtures
 };
