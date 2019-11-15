@@ -1,5 +1,4 @@
 let api = "https://api-football-v1.p.rapidapi.com";
-// const API_KEY = "03a08d2e01mshc2b16c59c72abe3p1e351ajsn0ac19ff3cdee";
 
 const apiHost = host => {
   api = host;
