@@ -3036,7 +3036,6 @@ it("should render the Team Data component", () => {
     />,
     div
   );
-  console.log(document.body.textContent);
   expect(document.body.textContent).toMatch(
     "TottenhamLondon, EnglandTottenham Hotspur StadiumTableFixturesStatsPosition1234567891011121314151617181920ClubLiverpoolLeicesterChelseaManchester CitySheffield UtdArsenalManchester UnitedWolvesBournemouthBurnleyBrightonCrystal PalaceNewcastleTottenhamEvertonWest HamAston VillaWatfordSouthamptonNorwichWon118884443444443433122Drawn12215547433335242521Lost02233342455554657689GF282927351316161615171510111813141781111GA10817139171215151817161817182020232928GD182110224-1410-1-2-6-71-5-6-3-15-18-17Points3426262517171616161515151514141311887"
   );

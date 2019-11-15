@@ -44,7 +44,7 @@ const okCheck = statusCheck([HTTP_OK]);
 
 const headers = {
   "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-  "x-rapidapi-key": "c146bed1b9mshee589373336de13p1fe012jsn9e800103b694"
+  "x-rapidapi-key": "593f94778cmsh7c603020ac34b09p1cf2a9jsnbb3212787667"
 };
 
 const parameters = params => {
