@@ -2298,4 +2298,11 @@ const searchLeagues = () =>
         }
   });
 
-export { apiHost, searchTeams, searchLeagues, returnTeamStats, returnLeagueTable, returnTeamFixtures };
+export { 
+  apiHost, 
+  searchTeams, 
+  searchLeagues, 
+  returnTeamStats, 
+  returnLeagueTable, 
+  returnTeamFixtures 
+};
