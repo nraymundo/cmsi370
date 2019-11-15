@@ -86,6 +86,7 @@ const SearchForm = () => {
         });
         setFixtures(result4.api.fixtures);
       } catch (error) {
+        console.log("we here");
         setError("Sorry, that team doesn't exist.");
       }
     } else if (checkCategory(query) === "League") {
