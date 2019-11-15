@@ -67,11 +67,8 @@
 .PositionTeam {
   display: flex;
   flex-direction: row;
-  /* width: 200px; */
-  /* margin-left: 20px; */
   justify-content: space-around;
   margin-top: 10px;
-  /* margin-bottom: 10px; */
 }
 
 .Positions {
@@ -84,7 +81,6 @@
   margin-bottom: 10px;
   font-family: "Bebas Neue", sans-serif;
   font-size: 20px;
-  /* padding: 10px 0px 10px 0px; */
 }
 
 .Positions > tbody > tr > td {
