@@ -152,23 +152,23 @@ describe("API calls", () => {
   });
 });
 
-// describe("failed API calls", () => {
-//   let div;
-//   beforeEach(async () => {
-//     sinon.stub(api, "searchTeams");
-//     api.searchGifs.returns(Promise.reject("Mock failure"));
+describe("failed API calls", () => {
+  let div;
+  beforeEach(async () => {
+    sinon.stub(api, "searchTeams");
+    api.searchTeams.returns(Promise.reject("Mock failure"));
 
-//     div = await setupAndQuerySearchForm();
-//   });
+    div = await setupAndQuerySearchForm();
+  });
 
-//   afterEach(() => {
-//     ReactDOM.unmountComponentAtNode(div);
-//     api.searchGifs.restore();
-//   });
+  afterEach(() => {
+    ReactDOM.unmountComponentAtNode(div);
+    api.searchTeams.restore();
+  });
 
-//   it("should display an alert when the API call fails", () => {
-//     // The document should contain the error div.
-//     const searchError = div.querySelector("div.error");
-//     expect(searchError.textContent).toEqual("Sorry, but something went wrong.");
-//   });
-// });
+  it("should display an alert when the API call fails", () => {
+    // The document should contain the error div.
+    const searchError = div.querySelector("div.error");
+    expect(searchError.textContent).toEqual("Sorry, that team doesn't exist.");
+  });
+});
