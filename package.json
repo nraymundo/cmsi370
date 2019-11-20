@@ -1,8 +1,10 @@
 {
-  "name": "giphy-sample-react-hooks",
-  "version": "0.1.0",
+  "name": "frontend-development",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://nraymundo.github.io/cmsi370",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.14",
@@ -13,6 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
